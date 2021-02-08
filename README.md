@@ -71,7 +71,17 @@ TBA
 
 ## Authors
 
-TBA
+👤 **Juan Raudales**
+
+- Github : [@Jarfsoft](https://github.com/Jarfsoft)
+- Twitter : [@Jarfsoft](https://twitter.com/Jarfsoft)
+- Linkedin : [Jarfsoft](https://www.linkedin.com/in/juan-raudales-flores-7b0a3b113/)
+
+👤 **Alvaro Ruiz**
+
+- Github: [@alvarorf](https://github.com/alvarorf)
+- Twitter: [@aaruizf](https://twitter.com/aaruizf)
+- Linkedin: [Álvaro Ruiz](https://www.linkedin.com/in/alvaro-andr%C3%A9s-ruiz-florez/)
 
 ## 🤝 Contributing
 
