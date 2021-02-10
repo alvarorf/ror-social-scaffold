@@ -1,0 +1,12 @@
+<h2>Create a friendship</h2>
+<%= form_with(model: @friendship) do |f| %>
+
+  <p>
+    <%= f.label :friend_id %> <br/>
+    <%= f.text_field :friend_id, value: 1 %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
