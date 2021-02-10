@@ -1,6 +1,7 @@
 <div class="post-comments">
+  <% comment = filter_friends_comment(comment) %>
   <p>
-    <b><%= comment.user.name %>:</b> <%= comment.content %>
+    <b><%= show_comment(comment)[0] %></b> <%= show_comment(comment)[1] %>
   </p>
-  <span> <%= comment.created_at.strftime("%Y/%m/%d") %> </span>
+  <span> <%= show_comment(comment)[2] %> </span>
 </div>
