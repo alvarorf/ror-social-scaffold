@@ -15,4 +15,8 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def show_name_if_logged_in(current_user)
+    menu_link_to current_user.name.to_s, user_path(current_user)
+  end
 end

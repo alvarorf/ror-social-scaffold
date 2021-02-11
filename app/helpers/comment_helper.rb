@@ -4,16 +4,16 @@ module CommentHelper
     u.friends.each do |f|
       return comment if f.id == comment.user_id
     end
-    return nil
+    nil
   end
 
   def show_comment(comment)
     return [] if comment.nil?
 
     a = []
-    a.push comment.user.name + ': '
+    a.push "#{comment.user.name}: "
     a.push comment.content
-    a.push comment.created_at.strftime("%Y/%m/%d")
+    a.push comment.created_at.strftime('%Y/%m/%d')
     a
   end
 end
