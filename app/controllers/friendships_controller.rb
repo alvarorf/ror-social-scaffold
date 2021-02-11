@@ -33,15 +33,13 @@ class FriendshipsController < ApplicationController
     end
     #@new_friend = User.find(1)
     @friendship = current_user.friendships.build(friendship_params)
+    @friendship.confirmed = false
 
-    respond_to do |format|
-      if @friendship.save
-        format.html { redirect_to @friendship, notice: 'Friendship was successfully created.' }
-        format.json { render :show, status: :created, location: @friendship }
-      else
-        format.html { render :new }
-        format.json { render json: @friendship.errors, status: :unprocessable_entity }
-      end
+    if @friendship.save
+      flash[:notice] = 'Friendship was saved correctly.'
+      redirect_back(fallback_location: new_user_friendship_path)
+    else
+      render :new
     end
   end
 
