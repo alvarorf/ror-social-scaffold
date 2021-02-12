@@ -9,7 +9,7 @@
   <article class="timeline">
   <h3>Friend requests:</h3>
   <ul class="posts">
-    <%= render @posts %>
+    <%= Friendship.where('user_id = ?', @user.id).first.class %>
   </ul>
 </article>
 </section>

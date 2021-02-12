@@ -11,11 +11,12 @@ module UserHelper
   end
 
   def toggle_friend_request(user)
-    return unless current_user != user
+    return unless current_user != user && current_user.friends.include?(user)
 
     link_to 'Add as friend',
             user_friendships_path(current_user,
                                   friendship: { friend_id: user.id,
-                                                confirmed: false }), method: :post, class: 'btn-1 green_btn'
+                                                confirmed: true }), method: :post, class: 'btn-1 green_btn'
   end
+
 end
