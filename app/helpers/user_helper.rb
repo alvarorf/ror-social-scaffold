@@ -18,4 +18,8 @@ module UserHelper
                                   friendship: { friend_id: user.id,
                                                 confirmed: true }), method: :post, class: 'btn-1 green_btn'
   end
+
+  def list_friend_request(user)
+    User.find_by(id: user.id).friend_requests.first.name
+  end
 end
