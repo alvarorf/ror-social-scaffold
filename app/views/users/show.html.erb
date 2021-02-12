@@ -9,7 +9,15 @@
   <article class="timeline">
   <h3>Friend requests:</h3>
   <ul class="posts">
-    <%= list_friend_requests(@user) %>
+    <% list_friend_requests(@user).each do |f| %>
+      <li> <%= f.name %> <%= link_to 'Accept',  %>
+    <% end %>
+  </ul>
+  <h3>Friends:</h3>
+  <ul class="posts">
+    <% list_friends(@user).each do |f| %>
+      <li> <%= f.name %> <li>
+    <% end %>
   </ul>
 </article>
 </section>

@@ -16,10 +16,25 @@ module UserHelper
     link_to 'Add as friend',
             user_friendships_path(current_user,
                                   friendship: { friend_id: user.id,
-                                                confirmed: true }), method: :post, class: 'btn-1 green_btn'
+                                                confirmed: true }), method: :put, class: 'btn-1 green_btn'
   end
 
-  def list_friend_request(user)
-    User.find_by(id: user.id).friend_requests.first.name
+  def list_friend_requests(user)
+    return if user.friend_requests.nil?
+
+    friends = User.find_by(id: user.id).friend_requests
+    a = []
+    friends.each do |f|
+      a.push f
+    end
+    a
+  end
+
+  def list_friends(user)
+    a = []
+    user.friends.each do |f|
+      a.push f
+    end
+    a
   end
 end
