@@ -18,5 +18,4 @@ module UserHelper
                                   friendship: { friend_id: user.id,
                                                 confirmed: true }), method: :post, class: 'btn-1 green_btn'
   end
-
 end

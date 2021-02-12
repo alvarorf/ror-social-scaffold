@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def timeline_posts
     @timeline_posts ||= Post.all.ordered_by_most_recent.includes(:user)
-    #current_user
+    # current_user
   end
 
   def post_params
