@@ -11,12 +11,12 @@ module UserHelper
   end
 
   def toggle_friend_request(user)
-    return unless current_user != user && current_user.friends.include?(user)
-
+    return if current_user == user || current_user.friends.include?(user)
+    #if current_user.friends.include?(user)
     link_to 'Add as friend',
-            user_friendships_path(current_user,
-                                  friendship: { friend_id: user.id,
-                                                confirmed: true }), method: :put, class: 'btn-1 green_btn'
+            user_friendships_path(current_user, :confirmed => true,:my_param => 'value'
+                                  friendship: { friend_id: user.id}, :action => :update), class: 'btn-1 green_btn'
+    #end
   end
 
   def list_friend_requests(user)
@@ -37,4 +37,10 @@ module UserHelper
     end
     a
   end
+
+  #def show_accept_request(f)
+  #  link_to 'Accept as a friend',
+  #  user_friendships_path(current_user, :confirmed => true,
+  #                        friendship: { friend_id: f.id}), method: :update, class: 'btn-1 green_btn'
+  #end
 end

@@ -24,7 +24,7 @@ class FriendshipsController < ApplicationController
   # POST /friendships.json
   def create
     @friendship = current_user.friendships.build(friendship_params)
-    @friendship.confirmed = false
+    @friendship.confirmed = params[:confirmed]
 
     if @friendship.save
       flash[:notice] = 'Friendship was saved correctly.'
@@ -37,6 +37,7 @@ class FriendshipsController < ApplicationController
   # PATCH/PUT /friendships/1
   # PATCH/PUT /friendships/1.json
   def update
+    @friendship.confirmed = params[:confirmed]
     respond_to do |format|
       if @friendship.update(friendship_params)
         format.html { redirect_to @friendship, notice: 'Friendship was successfully updated.' }

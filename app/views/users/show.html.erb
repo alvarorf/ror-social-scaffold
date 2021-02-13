@@ -10,7 +10,7 @@
   <h3>Friend requests:</h3>
   <ul class="posts">
     <% list_friend_requests(@user).each do |f| %>
-      <li> <%= f.name %> <%= link_to 'Accept',  %>
+      <li> <%= f.name %> <%= show_accept_request(f)  %>
     <% end %>
   </ul>
   <h3>Friends:</h3>
