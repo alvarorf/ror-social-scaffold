@@ -9,7 +9,11 @@
   <article class="timeline">
   <h3>Friend requests:</h3>
   <ul class="posts">
-    <%= list_friend_requests(@user) %>
+    <% list_friend_requests(@user).each do |f| %>
+      <li> Name: <%= f.name %></li>
+      <li> Email: <%= f.email %></li>
+      <li> Accept button: <%= accept_friend_request(f) %></li>
+    <% end %>
   </ul>
 </article>
 </section>
