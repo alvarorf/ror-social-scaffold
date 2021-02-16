@@ -10,13 +10,9 @@
   <h3>Friend requests:</h3>
   <ul class="posts">
     <% list_friend_requests(@user).each do |f| %>
-      <li> <%= f.name %> <%= show_accept_request(f)  %>
-    <% end %>
-  </ul>
-  <h3>Friends:</h3>
-  <ul class="posts">
-    <% list_friends(@user).each do |f| %>
-      <li> <%= f.name %> <li>
+      <li> Name: <%= f.name %></li>
+      <li> Email: <%= f.email %></li>
+      <li> Accept button: <%= accept_friend_request(f) %></li>
     <% end %>
   </ul>
 </article>

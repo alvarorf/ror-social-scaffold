@@ -40,7 +40,8 @@ class FriendshipsController < ApplicationController
     @friendship.confirmed = params[:confirmed]
     respond_to do |format|
       if @friendship.update(friendship_params)
-        format.html { redirect_to @friendship, notice: 'Friendship was successfully updated.' }
+        @friendship.confirmed = true
+        format.html { redirect_to users_path, notice: 'Friendship was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -65,6 +66,6 @@ class FriendshipsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def friendship_params
-    params.require(:friendship).permit(:friend_id)
+    params.require(:friendship).permit(:friend_id, :confirmed)
   end
 end
