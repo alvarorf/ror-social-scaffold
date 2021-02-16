@@ -14,9 +14,9 @@ module UserHelper
     return if current_user == user || current_user.friends.include?(user) || current_user.pending_friends.include?(user) || user.pending_friends.include?(current_user)
 
     link_to 'Add as friend',
-            user_friendships_path(current_user, :confirmed => true,:my_param => 'value'
-                                  friendship: { friend_id: user.id}, :action => :update), class: 'btn-1 green_btn'
-    #end
+            user_friendships_path(current_user,
+                                  friendship: { friend_id: user.id,
+                                                confirmed: true }), method: :post, class: 'btn-1 green_btn'
   end
 
   def accept_friend_request(user)
@@ -40,18 +40,4 @@ module UserHelper
   def call_accept(id)
     accept_friend_request(id)
   end
-
-  def list_friends(user)
-    a = []
-    user.friends.each do |f|
-      a.push f
-    end
-    a
-  end
-
-  #def show_accept_request(f)
-  #  link_to 'Accept as a friend',
-  #  user_friendships_path(current_user, :confirmed => true,
-  #                        friendship: { friend_id: f.id}), method: :update, class: 'btn-1 green_btn'
-  #end
 end
