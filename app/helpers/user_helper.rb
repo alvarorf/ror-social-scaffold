@@ -20,8 +20,8 @@ module UserHelper
   end
 
   def accept_friend_request(user)
-    f = Friendship.find_by(user_id: user.id)
-    return if f.nil? || current_user.friends.include?(user) || f.user_id == current_user.id || f.friend_id != current_user.id
+    f = Friendship.find_by(user_id: user.id, friend_id: current_user.id)
+    return if f.nil? || current_user.friends.include?(user) || f.user_id == current_user.id
 
     link_to 'Accept as friend',
             user_friendship_path(user, id: f.id, confirmed: true,
