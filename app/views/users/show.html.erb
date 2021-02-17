@@ -1,19 +1,18 @@
+
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
-  <article class="timeline">
-    <h3>Recent posts:</h3>
-    <ul class="posts">
-      <%= render @posts %>
-    </ul>
-  </article>
-  <article class="timeline">
-  <h3>Friend requests:</h3>
+<h2><%= "Name: #{@user.name}" %></h2>
+<article class="timeline">
+  <h3>Recent posts:</h3>
   <ul class="posts">
-    <% list_friend_requests(@user).each do |f| %>
-      <li> Name: <%= f.name %></li>
-      <li> Email: <%= f.email %></li>
-      <li> Accept button: <%= accept_friend_request(f) %></li>
-    <% end %>
+    <%= render @posts %>
   </ul>
 </article>
-</section>
+<article class="timeline">
+<h3>Friend requests:</h3>
+<ul class="posts">
+  <% list_friend_requests(@user).each do |f| %>
+    <li> Name: <%= f.name %></li>
+    <li> Email: <%= f.email %></li>
+    <li> Accept button: <%= accept_friend_request(f) %></li>
+  <% end %>
+</ul

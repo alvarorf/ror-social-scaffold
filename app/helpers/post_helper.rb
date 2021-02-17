@@ -16,4 +16,26 @@ module PostHelper
   def filter_only_friend_posts(_timeline_posts)
     current_user.friends # Friendship.where('user_id = ?', current_user.id)
   end
+
+  def only_friends_posts(post)
+    # current_user.friends.include?(user)
+    return unless current_user.friends.include?(User.find_by(id: post.user_id)) || post.user_id == current_user.id || post.nil?
+
+    render partial: "post", locals: { post: post }
+    #"There are no recent posts"
+    #a = []
+    #post.each do |p|
+    #  a << p.id
+    #end
+    #if is_a_friend_post
+        #render timeline_posts
+    #else
+    #  return nil
+    #
+    #"<ul class="posts"></ul>".html_safe
+    #"<h5>Post created by #{User.find_by(id: post.user_id).name}</h5>
+    #<p>#{post.content}</p>".html_safe
+    #"Hello".html_safe
+    #post
+  end
 end

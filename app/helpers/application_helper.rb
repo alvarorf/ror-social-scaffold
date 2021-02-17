@@ -21,4 +21,5 @@ module ApplicationHelper
 
     menu_link_to current_user.name.to_s, user_path(current_user)
   end
+
 end
