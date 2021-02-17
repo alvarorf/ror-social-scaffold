@@ -53,7 +53,7 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship.destroy
     respond_to do |format|
-      format.html { redirect_to friendships_url, notice: 'Friendship was successfully destroyed.' }
+      format.html { redirect_to users_path, notice: 'Friendship was successfully destroyed.' }
     end
   end
 
