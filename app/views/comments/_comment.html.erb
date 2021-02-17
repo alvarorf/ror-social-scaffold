@@ -1,7 +1,3 @@
-<div class="post-comments">
-  <% comment = filter_friends_comment(comment) %>
-  <p>
-    <b><%= show_comment(comment)[0] %></b> <%= show_comment(comment)[1] %>
-  </p>
-  <span> <%= show_comment(comment)[2] %> </span>
-</div>
+<li class="post-comments">
+  <%= filter_friends_comments(comment) %>
+</li>
