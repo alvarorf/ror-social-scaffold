@@ -2,5 +2,8 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-  </span>
+
+    <%=toggle_friend_request(user) %>
+    <%= accept_friend_request(user) %>
+    <%= reject_friend_request(user) %>
 </li>

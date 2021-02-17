@@ -9,7 +9,8 @@
   <h3>
     Recent posts
   </h3>
-  <ul class="posts">
-    <%= render @timeline_posts %>
-  </ul>
+  <%  @timeline_posts.each do |p| %>
+    <%= only_friends_posts(p) %>
+
+  <% end %>
 </article>

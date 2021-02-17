@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.comment-data {
+  background-image: linear-gradient(to right, rgb(228, 223, 223), rgb(188, 218, 180));
+  color: rgb(1, 19, 1);
+}
+
+.post-comments {
+  list-style-type: none;
+  width: 100%;
+}
