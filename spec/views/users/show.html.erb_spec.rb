@@ -1,4 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "users/show", type: :view do
+RSpec.describe 'users/show', type: :view do
 end

@@ -1,15 +1,4 @@
 module UserHelper
-  def show_invite_link(user)
-    return if current_user.friends.include? user
-
-    set_new_friend(user)
-    link_to 'Send friendship request', new_friendship_path
-  end
-
-  def check_if_pending(_user)
-    Friendship.where('user_id = ?', current_user.id)
-  end
-
   def toggle_friend_request(user)
     c = current_user
     return if c == user || user.pending_friends.include?(c)
@@ -43,10 +32,6 @@ module UserHelper
       a.push f
     end
     a
-  end
-
-  def call_accept(id)
-    accept_friend_request(id)
   end
 
   def reject_friend_request(user)
