@@ -37,10 +37,9 @@ class FriendshipsController < ApplicationController
   # PATCH/PUT /friendships/1
   # PATCH/PUT /friendships/1.json
   def update
-    @friendship.confirmed = params[:confirmed]
     respond_to do |format|
       if @friendship.update(friendship_params)
-        @friendship.confirmed = true
+        @friendship.confirm_friend
         format.html { redirect_to users_path, notice: 'Friendship was successfully updated.' }
       else
         format.html { render :edit }
