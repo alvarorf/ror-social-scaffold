@@ -8,6 +8,9 @@
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
+- Rspec
+- Linux
+- Capybara
 
 ## Live Demo
 
