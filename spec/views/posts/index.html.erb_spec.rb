@@ -12,12 +12,10 @@ RSpec.describe 'posts/create', type: :view do
         fill_in 'Email', with: 'user@example.com'
         fill_in 'Password', with: 'password'
       end
-      # within("#user_password") do
       click_button 'Log in'
       visit '/posts'
       within('#new_post') do
         fill_in 'post_content', with: 'Test post'
-        # fill_in 'Password', with: 'password'
       end
       click_button 'Save'
       expect(page).to have_content 'Post was successfully created.'
@@ -35,19 +33,16 @@ RSpec.describe 'posts/create', type: :view do
         fill_in 'Email', with: 'user@example.com'
         fill_in 'Password', with: 'password'
       end
-      # within("#user_password") do
       click_button 'Log in'
       visit '/posts'
       within('#new_post') do
         fill_in 'post_content', with: 'Test post'
-        # fill_in 'Password', with: 'password'
       end
       click_button 'Save'
       expect(page).to have_content 'Post was successfully created.'
       visit '/posts'
       within('#new_comment') do
         fill_in 'comment_content', with: 'Comment 1 made by user on his own post (post 1).'
-        # fill_in 'Password', with: 'password'
       end
       click_button 'Comment'
       expect(page).to have_content 'Comment was successfully created.'

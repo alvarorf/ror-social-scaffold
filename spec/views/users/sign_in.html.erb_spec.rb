@@ -12,7 +12,6 @@ RSpec.describe 'users/sign_in', type: :view do
         fill_in 'Email', with: 'user@example.com'
         fill_in 'Password', with: 'password'
       end
-      # within("#user_password") do
       click_button 'Log in'
       expect(page).to have_content 'Signed in successfully.'
     end
