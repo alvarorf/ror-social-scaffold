@@ -3,7 +3,7 @@ module UserHelper
     c = current_user
     return if c == user || user.pending_friends.include?(c)
 
-    return 'Friends' if c.friends.include?(user)
+    return 'Friends' if c.friends?(user)
 
     return 'Pending request' if c.pending_friends.include?(user)
 
@@ -16,7 +16,7 @@ module UserHelper
   def accept_friend_request(user)
     f = Friendship.find_by(user_id: user.id, friend_id: current_user.id)
     c = current_user
-    return if f.nil? || c.friends.include?(user) || f.user_id == c.id
+    return if f.nil? || c.friends?(user) || f.user_id == c.id
 
     link_to 'Accept as friend',
             user_friendship_path(user, id: f.id, confirmed: true,
@@ -37,7 +37,7 @@ module UserHelper
   def reject_friend_request(user)
     f = Friendship.find_by(user_id: user.id, friend_id: current_user.id)
     c = current_user
-    return if f.nil? || c.friends.include?(user) || f.user_id == c.id
+    return if f.nil? || c.friends?(user) || f.user_id == c.id
 
     link_to 'Reject request',
             user_friendship_path(user, id: f.id,
