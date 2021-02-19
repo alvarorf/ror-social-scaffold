@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-![Demo](https://ror-social-media-net.herokuapp.com/)
+Demo : [@Jarfsoft](http://ror-social-media-net.herokuapp.com/)
 
 
 ## Getting Started
